@@ -7,11 +7,13 @@ import './styles/styles.css'; //Can import styles :)
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; //Can import other css libraries
 import configureStore from './store/configureStore';
 import {loadCourses} from "./actions/courseActions";
+import {loadAuthors} from "./actions/authorActions";
 import {Provider} from 'react-redux';
 
 //Would set initial state if using server
 const store = configureStore();
 store.dispatch(loadCourses());
+store.dispatch(loadAuthors());
 
 render (
   <Provider store={store}>
