@@ -5,6 +5,7 @@ import { Router, browserHistory } from 'react-router'; //browserhistory handles 
 import routes from './routes'; //Import the routes for our routers
 import './styles/styles.css'; //Can import styles :)
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; //Can import other css libraries
+import '../node_modules/toastr/build/toastr.min.css';
 import configureStore from './store/configureStore';
 import {loadCourses} from "./actions/courseActions";
 import {loadAuthors} from "./actions/authorActions";
