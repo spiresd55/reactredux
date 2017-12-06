@@ -21,3 +21,5 @@ app.listen(port, function(err) {
     open(`http://localhost:${port}`)
   }
 });
+
+//Challenges: Author Administration, Delete Course, Hide empty course list, unsaved changes, client side validation, handle 404s, show #coures in header, pagination, sort course table, revert abandoned changes
