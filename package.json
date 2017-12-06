@@ -10,7 +10,13 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "nyc --reporter=html --reporter=text mocha --reporter progress tools/testSetup.js \"src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
-    "coverage": "istanbul cover _mocha -- R test"
+    "coverage": "istanbul cover _mocha -- R test",
+    "clean-dist": "npm run remove-dist && mkdir dist",
+    "remove-dist": "node_modules/.bin/rimraf ./dist",
+    "build:html": "babel-node tools/buildHtml.js",
+    "prebuild": "npm-run-all clean-dist test lint build:html",
+    "build": "babel-node tools/build.js",
+    "postbuild": "babel-node tools/distServer.js"
   },
   "author": "Cory House",
   "license": "MIT",
